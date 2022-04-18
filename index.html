@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form Validation</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .master {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background-color: rgb(154, 255, 218);
+        }
+        .master .wrapper {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            max-width: 500px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 50px;
+        }
+        .master .wrapper h2 {
+            text-align: center;
+            color: green;
+            margin: 0 0 20px;
+        }
+        .master .wrapper form .form-group {
+            margin-bottom: 15px;
+        }
+        .master .wrapper form .form-group .form-control-container {
+            border: 2px solid rgb(154, 255, 218);
+            padding: 10px 20px;
+            border-radius: 5px;            
+        }
+        .master .wrapper form .form-group .form-control {
+            width: 100%;
+            font-size: 16px;
+            border: none;
+            background: none;
+        }
+        .master .wrapper form .form-group .form-control:focus {
+            outline: none;
+        }
+        .master .wrapper form .btn-wrapper {
+            text-align: center;
+        }
+        .master .wrapper form button {
+            border: 2px solid rgb(154, 255, 218);
+            font-size: 16px;
+            border-radius: 5px;
+            padding: 10px 10px;
+            cursor: pointer;
+        }
+        .error {
+            color: red;
+            margin: 5px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="master">
+        <div class="wrapper">
+            <h2>Log In</h2>
+            <form action="" onsubmit="return validateForm()" id="login-form">
+                <div class="form-group">
+                    <div class="form-control-container">                        
+                        <input type="text" placeholder="Email" class="form-control" id="email-inp">
+                    </div>
+                    <small class="error" id="user-error"></small>
+                </div>
+                <div class="form-group">
+                    <div class="form-control-container">                        
+                        <input type="password" placeholder="Password" class="form-control" id="password-inp">
+                    </div>
+                    <small class="error" id="password-error"></small>
+                </div>
+                <div class="btn-wrapper">                    
+                    <button type="submit" id="submit">Log In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
